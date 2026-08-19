@@ -271,7 +271,7 @@ footer{background:#060708;padding:34px 0 26px;border-top:1px solid var(--line)}
 /* LIGHTBOX */
 .lightbox{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:24px}
 .lightbox.open{display:flex}
-.lightbox img{max-width:96vw;max-height:92vh;object-fit:contain}
+.lightbox img{width:96vw;height:92vh;max-width:96vw;max-height:92vh;object-fit:contain}
 .lb-close{position:absolute;right:20px;top:13px;border:0;background:none;color:#fff;font-size:40px;cursor:pointer}
 .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:70px;border:0;background:rgba(5,6,7,.55);color:#fff;font-size:30px;cursor:pointer}
 .lb-prev{left:12px}.lb-next{right:12px}
@@ -354,4 +354,237 @@ footer{background:#060708;padding:34px 0 26px;border-top:1px solid var(--line)}
 }
 @media(max-width:650px){
   .features{grid-template-columns:1fr}
+}
+
+
+/* V8 — Transporter / Acid Pixel Studios first released game */
+.transporter{
+  background:
+    radial-gradient(circle at 82% 10%,rgba(35,143,255,.10),transparent 28%),
+    radial-gradient(circle at 16% 82%,rgba(255,115,22,.08),transparent 30%),
+    #090c10;
+}
+.transporter-hero{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+}
+.transporter-logo-wrap{
+  width:min(460px,100%);
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  margin-bottom:26px;
+  background:#0b0e12;
+}
+.transporter-logo-card{
+  width:100%;
+  height:auto;
+}
+.transporter-release-copy{
+  margin-top:17px;
+}
+.transporter-art{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 32px 90px rgba(0,0,0,.40);
+  aspect-ratio:16/9;
+}
+.transporter-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.transporter-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin:28px 0 22px;
+}
+.transporter-stat{
+  min-height:95px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:rgba(255,255,255,.025);
+}
+.transporter-stat strong{
+  font-family:"Arial Narrow",Impact,sans-serif;
+  font-size:31px;
+  line-height:1;
+  color:var(--orange);
+}
+.transporter-stat span{
+  margin-top:8px;
+  color:#a7afb9;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.10em;
+  font-weight:850;
+}
+.transporter-platforms{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.transporter-steam{
+  background:#1b2838;
+  border-color:#66c0f4;
+}
+.transporter-switch{
+  background:#e60012;
+  border-color:#ff5c67;
+  color:#fff;
+}
+.transporter-subhead{
+  margin-top:72px;
+}
+.transporter-subhead h3{
+  margin:0;
+  font-family:"Arial Narrow",Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(34px,4.5vw,58px);
+  line-height:.95;
+  letter-spacing:-.025em;
+}
+.transporter-videos{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:24px;
+}
+.transporter-video-card{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#0e1217;
+}
+.transporter-video-card video{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#050607;
+  object-fit:cover;
+}
+.transporter-video-title{
+  padding:14px 16px;
+  font-family:"Arial Narrow",Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:17px;
+  letter-spacing:.04em;
+}
+.transporter-media-head{
+  margin-top:66px;
+}
+.transporter-media-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:24px;
+}
+.transporter-media-grid a{
+  display:block;
+  aspect-ratio:16/9;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#11151b;
+}
+.transporter-media-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .35s ease,filter .25s ease;
+}
+.transporter-media-grid a:hover img{
+  transform:scale(1.025);
+  filter:brightness(1.08);
+}
+
+@media(max-width:1050px){
+  .transporter-hero{grid-template-columns:1fr}
+  .transporter-art{max-width:900px}
+  .transporter-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:800px){
+  .transporter-videos{grid-template-columns:1fr}
+  .transporter-media-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .transporter-stats{grid-template-columns:1fr 1fr}
+  .transporter-media-grid{grid-template-columns:1fr}
+}
+
+
+
+
+/* V10 — Transporter refinements */
+.transporter-hero{
+  display:block;
+}
+.transporter-copy{
+  max-width:980px;
+}
+.transporter-art{
+  display:none !important;
+}
+
+/* Transporter gallery intentionally uses the exact same .gallery-grid and .shot rules as GITC. */
+
+
+/* V13 — fullscreen hero sound control */
+.hero-sound-toggle{
+  position:absolute;
+  z-index:5;
+  right:clamp(18px,3vw,44px);
+  bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:38px;
+  padding:0 13px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:20px;
+  background:rgba(5,7,9,.58);
+  backdrop-filter:blur(8px);
+  color:#f2f3f4;
+  opacity:0;
+  visibility:hidden;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:8px;
+  font-weight:900;
+  transition:opacity .25s ease,border-color .2s ease,background .2s ease,transform .2s ease;
+}
+.hero-sound-toggle.visible{
+  opacity:.82;
+  visibility:visible;
+}
+.hero-sound-toggle:hover{
+  opacity:1;
+  transform:translateY(-1px);
+  border-color:rgba(255,115,22,.9);
+  background:rgba(8,10,12,.76);
+}
+.hero-sound-toggle.sound-on{
+  border-color:rgba(255,115,22,.85);
+}
+.hero-sound-toggle .sound-icon{
+  display:inline-grid;
+  place-items:center;
+  width:13px;
+  color:var(--orange);
+  font-size:8px;
+}
+@media(max-width:800px){
+  .hero-sound-toggle{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-sound-toggle{display:none}
 }

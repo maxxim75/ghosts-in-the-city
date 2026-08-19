@@ -12,6 +12,11 @@
   <meta property="og:url" content="https://acid-pixel.com/">
   <meta property="og:image" content="https://acid-pixel.com/assets/images/Steam_Screenshot_1-2048.webp">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preload" as="image" href="assets/images/Steam_Screenshot_1-2048.webp">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,6 +29,7 @@
       <a href="#proof">Videos</a>
       <a href="#screenshots">Screenshots</a>
       <a href="#community">Community</a>
+      <a href="#transporter">Transporter</a>
       <a href="#publishers" class="invest">Publishers / Investors</a>
       <a data-steam href="#" class="steam">Wishlist</a>
     </nav>
@@ -37,6 +43,10 @@
         <img src="assets/images/Steam_Screenshot_1-2048.webp" alt="Ghosts in the City — Tokyo">
       </picture>
       <div id="hero-video" class="hero-video-wrap" aria-hidden="true"></div>
+      <button id="hero-sound-toggle" class="hero-sound-toggle" type="button" aria-pressed="false" aria-label="Turn hero video sound on">
+        <span class="sound-icon" aria-hidden="true">◼</span>
+        <span class="sound-label">Sound On</span>
+      </button>
       <div class="hero-noise"></div>
 
       <div class="hero-content">
@@ -165,12 +175,158 @@
       </div>
     </section>
 
-    <section id="publishers" class="section business">
+
+    <section id="transporter" class="section transporter">
       <div class="section-index">05</div>
+      <div class="jp">輸送</div>
+      <div class="container">
+        <div class="section-tag">05 — Released Game</div>
+        <div class="transporter-hero">
+          <div class="transporter-copy">
+
+            <h2>Our first release.<br><span class="orange">Transporter.</span></h2>
+
+            <p class="lead">
+              Before Ghosts in the City, Acid Pixel Studios shipped Transporter — a technical
+              platform-racing game where speed, balance and vehicle choice are as important as reaching the finish line.
+            </p>
+
+            <p class="copy transporter-release-copy">
+              Released on Steam in June 2025 and Nintendo Switch in July 2025, Transporter features
+              two worlds, global leaderboards and a garage built around radically different vehicles.
+              The Nintendo Switch edition has become the game's strongest-selling version.
+            </p>
+
+            <div class="transporter-stats">
+              <div class="transporter-stat"><strong>19</strong><span>Vehicles</span></div>
+              <div class="transporter-stat"><strong>11</strong><span>Cargo types</span></div>
+              <div class="transporter-stat"><strong>2</strong><span>Worlds</span></div>
+              <div class="transporter-stat"><strong>100%</strong><span>Positive Steam reviews</span></div>
+            </div>
+
+            <div class="transporter-platforms">
+              <a class="cta transporter-steam" href="https://store.steampowered.com/app/2887370/Transporter/" target="_blank" rel="noopener noreferrer">
+                View on Steam
+              </a>
+              <a class="cta transporter-switch" href="https://www.nintendo.com/us/store/products/transporter-switch/" target="_blank" rel="noopener noreferrer">
+                Nintendo Switch
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="transporter-subhead">
+          <div>
+            <div class="section-tag">Trailers</div>
+            <h3>Two worlds.<br><span class="orange">Two ways to drive.</span></h3>
+          </div>
+        </div>
+
+        <div class="transporter-videos">
+          <article class="transporter-video-card">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              poster="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257069991/4d15bd5473c94e74542314bd768288574af28eef/movie_600x337.jpg">
+              <source src="https://video.fastly.steamstatic.com/store_trailers/257052081/movie_max.mp4" type="video/mp4">
+            </video>
+            <div class="transporter-video-title">Operation Overlord</div>
+          </article>
+
+          <article class="transporter-video-card">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              poster="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257027581/movie_full.jpg">
+              <source src="https://video.fastly.steamstatic.com/store_trailers/257045189/movie_max.mp4" type="video/mp4">
+            </video>
+            <div class="transporter-video-title">Indy Jungle</div>
+          </article>
+        </div>
+
+        <div class="transporter-subhead transporter-media-head">
+          <div>
+            <div class="section-tag">Screenshots & Media</div>
+            <h3>Drive. Balance.<br><span class="orange">Deliver.</span></h3>
+          </div>
+        </div>
+
+        <div id="transporter-gallery" class="gallery-grid">
+          <div class="shot" data-transporter-index="0">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN02-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN02-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN02-2048.webp" alt="Transporter screenshot 1" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="1">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN10-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN10-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN10-2048.webp" alt="Transporter screenshot 2" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="2">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN11-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN11-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN11-2048.webp" alt="Transporter screenshot 3" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="3">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotJ05-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotJ05-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotJ05-2048.webp" alt="Transporter screenshot 4" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="4">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotJ09-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotJ09-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotJ09-2048.webp" alt="Transporter screenshot 5" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="5">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN04-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN04-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN04-2048.webp" alt="Transporter screenshot 6" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="6">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN06-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN06-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN06-2048.webp" alt="Transporter screenshot 7" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="7">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN08-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN08-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN08-2048.webp" alt="Transporter screenshot 8" loading="lazy">
+            </picture>
+          </div>
+          <div class="shot" data-transporter-index="8">
+            <picture>
+              <source media="(max-width:820px)" srcset="assets/images/transporter/Steam_ScreenshotN09-768.webp">
+              <source media="(max-width:1500px)" srcset="assets/images/transporter/Steam_ScreenshotN09-1280.webp">
+              <img src="assets/images/transporter/Steam_ScreenshotN09-2048.webp" alt="Transporter screenshot 9" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publishers" class="section business">
+      <div class="section-index">06</div>
       <div class="jp">提携</div>
       <div class="container business-inner">
         <div>
-          <div class="section-tag">05 — Publishing & Investment</div>
+          <div class="section-tag">06 — Publishing & Investment</div>
           <h2>Partner with<br><span class="orange">Acid Pixel Studios.</span></h2>
           <p class="lead">Acid Pixel Studios is currently looking for publishing and investment partners to support the development and launch of Ghosts in the City.</p>
         </div>

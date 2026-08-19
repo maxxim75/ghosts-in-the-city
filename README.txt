@@ -86,3 +86,63 @@ V6 CHANGES
   https://discord.gg/fHp2GMb7Mr
 - Contact / Publishers & Investors buttons now email:
   contact@acid-pixel.com
+
+
+V7 CHANGES
+==========
+- Added Acid Pixel favicon supplied by the user.
+- Added favicon.ico
+- Added 16x16 and 32x32 PNG favicons.
+- Added Apple Touch Icon 180x180.
+- Added Android/Chrome icons 192x192 and 512x512.
+- Added site.webmanifest for browser/mobile shortcuts.
+
+
+V8 CHANGES
+==========
+- Added a full Transporter section before Publishing & Investment.
+- Added Transporter to the top navigation.
+- Added public Steam and Nintendo Switch store links.
+- Added two Steam-hosted Transporter trailers:
+  Operation Overlord and Indy Jungle.
+- Added a Transporter screenshot/media gallery using official Steam assets.
+- Added game facts: 19 vehicles, 11 cargo types, 2 worlds, global leaderboards.
+- Added 100% positive Steam review status.
+- Added text noting that the Nintendo Switch edition became the strongest-selling version.
+- Publishing & Investment is now Section 06.
+
+
+V9 CHANGES
+==========
+- Removed the large decorative image on the right side of the Transporter intro.
+- Added 9 uploaded Transporter screenshots as local optimized WebP assets.
+- Transporter screenshot gallery now matches the GITC gallery style:
+  equal 16:9 thumbnails, rounded corners, responsive grid, fullscreen lightbox.
+- Replaced the fullscreen home-page background YouTube video with:
+  https://youtu.be/QGj4jSOn93w
+
+
+V10 CHANGES
+===========
+- Removed the Transporter poster/header image at the start of the Transporter section.
+- Transporter screenshot gallery now uses the exact same CSS classes and dimensions as the GITC gallery.
+- Removed all Transporter-specific gallery sizing overrides.
+
+
+V11 FIXES
+========
+- Fixed broken Transporter screenshot 2 by restoring the missing file Steam_ScreenshotN10-2048.webp (copied from the available 1280px source).
+
+
+V12 FIXES
+=========
+- Lightbox now uses a fixed viewport display area (96vw x 92vh) with object-fit: contain.
+- All screenshots, including Transporter screenshot 2, now display at a consistent fullscreen size regardless of source resolution.
+
+
+V13 CHANGES
+===========
+- Added a discreet SOUND ON / SOUND OFF control to the fullscreen hero video.
+- Hero still starts muted so browser autoplay remains reliable.
+- First user click unmutes the YouTube background video and sets volume to 100%.
+- Sound button is hidden on mobile where the site uses the static hero fallback.

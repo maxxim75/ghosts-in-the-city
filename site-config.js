@@ -10,7 +10,7 @@ window.GITC_CONFIG = {
   contactEmail: "contact@acid-pixel.com",
 
   // Fullscreen hero background video.
-  heroVideoId: "nNNiZ4j-7XM",
+  heroVideoId: "QGj4jSOn93w",
 
   videos: [
     {

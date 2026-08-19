@@ -1,6 +1,18 @@
 
 const cfg = window.GITC_CONFIG;
+const transporterGallery = [
+  "assets/images/transporter/Steam_ScreenshotN02-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN10-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN11-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotJ05-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotJ09-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN04-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN06-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN08-2048.webp",
+  "assets/images/transporter/Steam_ScreenshotN09-2048.webp"
+];
 let lbIndex = 0;
+let lbMode = "gitc";
 
 document.addEventListener("DOMContentLoaded", () => {
   bindLinks();
@@ -8,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroVideo();
   initVideos();
   initGallery();
+  initTransporterGallery();
   initLightbox();
 });
 
@@ -44,15 +57,64 @@ function initNav(){
 
 function initHeroVideo(){
   const wrap=document.querySelector("#hero-video");
+  const soundButton=document.querySelector("#hero-sound-toggle");
   if(!wrap || !cfg.heroVideoId) return;
+
   const id=cfg.heroVideoId;
-  const src=`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0`;
+  const src=`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&enablejsapi=1`;
+
   const iframe=document.createElement("iframe");
   iframe.src=src;
   iframe.title="Ghosts in the City background video";
   iframe.allow="autoplay; encrypted-media; picture-in-picture";
   iframe.setAttribute("tabindex","-1");
-  iframe.onload=()=>setTimeout(()=>wrap.classList.add("ready"),500);
+
+  let soundOn=false;
+
+  const youtubeCommand=(func,args=[])=>{
+    if(!iframe.contentWindow) return;
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event:"command",
+      func,
+      args
+    }),"*");
+  };
+
+  const updateSoundButton=()=>{
+    if(!soundButton) return;
+    soundButton.setAttribute("aria-pressed",soundOn ? "true" : "false");
+    soundButton.setAttribute(
+      "aria-label",
+      soundOn ? "Turn hero video sound off" : "Turn hero video sound on"
+    );
+    const label=soundButton.querySelector(".sound-label");
+    const icon=soundButton.querySelector(".sound-icon");
+    if(label) label.textContent=soundOn ? "Sound Off" : "Sound On";
+    if(icon) icon.textContent=soundOn ? "◼" : "▶";
+    soundButton.classList.toggle("sound-on",soundOn);
+  };
+
+  iframe.onload=()=>{
+    setTimeout(()=>{
+      wrap.classList.add("ready");
+      if(soundButton) soundButton.classList.add("visible");
+    },500);
+  };
+
+  if(soundButton){
+    soundButton.addEventListener("click",()=>{
+      soundOn=!soundOn;
+      if(soundOn){
+        youtubeCommand("unMute");
+        youtubeCommand("setVolume",[100]);
+      }else{
+        youtubeCommand("mute");
+      }
+      updateSoundButton();
+    });
+    updateSoundButton();
+  }
+
   wrap.appendChild(iframe);
 }
 
@@ -104,6 +166,14 @@ function initGallery(){
   });
 }
 
+
+function initTransporterGallery(){
+  document.querySelectorAll("[data-transporter-index]").forEach(el=>{
+    const i=Number(el.dataset.transporterIndex);
+    el.addEventListener("click",()=>openTransporterLightbox(i));
+  });
+}
+
 function initLightbox(){
   document.querySelector(".lb-close").addEventListener("click",closeLightbox);
   document.querySelector(".lb-prev").addEventListener("click",()=>moveLb(-1));
@@ -119,8 +189,38 @@ function initLightbox(){
     if(e.key==="ArrowRight") moveLb(1);
   });
 }
-function openLightbox(i){lbIndex=i;updateLb();document.querySelector(".lightbox").classList.add("open");document.body.style.overflow="hidden"}
-function closeLightbox(){document.querySelector(".lightbox").classList.remove("open");document.body.style.overflow=""}
-function moveLb(d){lbIndex=(lbIndex+d+cfg.gallery.length)%cfg.gallery.length;updateLb()}
-function updateLb(){const n=cfg.gallery[lbIndex];const im=document.querySelector("#lb-image");im.src=`assets/images/${n}-2048.webp`;im.alt=`Ghosts in the City screenshot ${lbIndex+1}`}
+function openLightbox(i){
+  lbMode="gitc";
+  lbIndex=i;
+  updateLb();
+  document.querySelector(".lightbox").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function openTransporterLightbox(i){
+  lbMode="transporter";
+  lbIndex=i;
+  updateLb();
+  document.querySelector(".lightbox").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeLightbox(){
+  document.querySelector(".lightbox").classList.remove("open");
+  document.body.style.overflow="";
+}
+function moveLb(d){
+  const total=lbMode==="transporter" ? transporterGallery.length : cfg.gallery.length;
+  lbIndex=(lbIndex+d+total)%total;
+  updateLb();
+}
+function updateLb(){
+  const im=document.querySelector("#lb-image");
+  if(lbMode==="transporter"){
+    im.src=transporterGallery[lbIndex];
+    im.alt=`Transporter screenshot ${lbIndex+1}`;
+  }else{
+    const n=cfg.gallery[lbIndex];
+    im.src=`assets/images/${n}-2048.webp`;
+    im.alt=`Ghosts in the City screenshot ${lbIndex+1}`;
+  }
+}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
