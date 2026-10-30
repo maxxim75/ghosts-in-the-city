@@ -1,7 +1,7 @@
 // GHOSTS IN THE CITY — editable public-site configuration
 window.GITC_CONFIG = {
   steamUrl: "https://store.steampowered.com/app/4144420/Ghosts_in_the_City/?utm_source=officialwebsite&utm_medium=web",
-  redditUrl: "https://www.reddit.com/r/ghostinthecity/",
+  redditUrl: "https://www.reddit.com/r/GhostsInTheCity/",
 
   // Add your permanent Discord invite later.
   discordUrl: "https://discord.gg/fHp2GMb7Mr",
